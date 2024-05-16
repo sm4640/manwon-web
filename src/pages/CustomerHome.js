@@ -1,19 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 import MenuList from "../components/MenuList";
-import ManwonText from "../components/ManwonText";
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
+import { FaMoneyBill1Wave } from "react-icons/fa6";
+import Navbar from "../components/Navbar";
+
 
 const Background = styled.div`
     background: #f3fdf9;
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
 
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
+`;
+
+const ManwonText = styled.div`
+font-size: 40px;
+font-weight: 700;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 1vw;
+padding-top: 20px;
 `;
 
 const Container = styled.div`
@@ -54,9 +67,17 @@ function CustomerHome() {
             });
     };
     return (
+        <>
+        
         <Background>
+            <ManwonText>
+                <FaMoneyBill1Wave />
+                만원프로젝트
+                <FaMoneyBill1Wave />
+            </ManwonText>
+            {/* <Navbar /> */}
             <Container>
-                <ManwonText />
+                
                 {todayMenuList["all"] &&
                     todayMenuList["all"].map((menus, index) => (
                         <MenuWrapper>
@@ -65,6 +86,7 @@ function CustomerHome() {
                     ))}
             </Container>
         </Background>
+    </>
     );
 }
 

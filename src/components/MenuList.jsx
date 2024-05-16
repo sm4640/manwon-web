@@ -8,7 +8,7 @@ const Block = styled.div`
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 `;
 

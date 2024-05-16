@@ -11,17 +11,17 @@ const routes = [
     {
         path: "/sellerhome",
         element: <SellerHome />,
-        name: "판매자 홈 페이지(민재)",
+        name: "판매자 홈 페이지",
     },
     {
         path: "/sellermenu/:selectedTeam",
         element: <SellerMenu />,
-        name: "판매자 메뉴 입력(진선)",
+        name: "판매자 메뉴 입력",
     },
     {
         path: "/customerhome",
         element: <CustomerHome />,
-        name: "구매자 홈 페이지(한서)",
+        name: "구매자 홈 페이지",
     },
 ];
 

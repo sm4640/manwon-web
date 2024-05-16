@@ -6,10 +6,30 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const Background = styled.div`
-    background: #f7e8dd;
+    background: #FFF6F6;
     width: 100vw; // 화면 전체 너비
     height: 100vh; // 화면 전체 높이
 `;
+
+const Team = styled.div`
+font-size: 36px;
+font-weight: 700;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+/* gap: 1vw; */
+padding: 20px;
+`;
+
+const Contents = styled.div`
+/* margin-top: px; */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 4vh;
+`
 
 function SellerMenu() {
     const { selectedTeam } = useParams();
@@ -42,14 +62,18 @@ function SellerMenu() {
 
     return (
         <Background>
-            {menuList["team"] &&
-                menuList["team"].map((menu, index) => (
-                    <MenuBlock
-                        key={index}
-                        menuInfo={menu}
-                        selectedTeam={selectedTeam}
-                    />
-                ))}
+            <Team>{selectedTeam}팀</Team>
+            <Contents>
+                {menuList["team"] &&
+                    menuList["team"].map((menu, index) => (
+                        <MenuBlock
+                            key={index}
+                            menuInfo={menu}
+                            selectedTeam={selectedTeam}
+                        />
+                    ))}
+            </Contents>
+            
             {/* {menuList["team"].length === 0 && <div>No menu data available</div>} */}
         </Background>
     );
