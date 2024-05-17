@@ -18,8 +18,8 @@ const Background = styled.div`
 `;
 
 const ManwonText = styled.div`
-font-size: 36px;
-font-weight: 700;
+font-size: 26px;
+font-weight: 600;
 display: flex;
 flex-direction: row;
 justify-content: center;
@@ -51,7 +51,7 @@ function SellerHome() {
     return (
         <Background>
             <ManwonText>
-                    <FaMoneyBill1Wave />
+                    <FaMoneyBill1Wave size="20px"/>
                     만원프로젝트 판매자 홈
                     <FaMoneyBill1Wave />
             </ManwonText>

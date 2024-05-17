@@ -12,7 +12,7 @@ const Background = styled.div`
 `;
 
 const Team = styled.div`
-font-size: 36px;
+font-size: 30px;
 font-weight: 700;
 display: flex;
 flex-direction: row;
