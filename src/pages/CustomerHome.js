@@ -29,6 +29,16 @@ gap: 1vw;
 padding-top: 20px;
 `;
 
+const Day = styled.div`
+font-size: 30px;
+font-weight: 600;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+`
+
 const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -75,6 +85,7 @@ function CustomerHome() {
                 만원프로젝트
                 <FaMoneyBill1Wave />
             </ManwonText>
+            <Day>5월 {today}일</Day>
             {/* <Navbar /> */}
             <Container>
                 
