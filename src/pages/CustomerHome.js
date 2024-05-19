@@ -6,7 +6,6 @@ import axios from "axios";
 import { FaMoneyBill1Wave } from "react-icons/fa6";
 import Navbar from "../components/Navbar";
 
-
 const Background = styled.div`
     background: #f3fdf9;
     width: 100vw;
@@ -19,25 +18,24 @@ const Background = styled.div`
 `;
 
 const ManwonText = styled.div`
-font-size: 40px;
-font-weight: 700;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-gap: 1vw;
-padding-top: 20px;
+    font-size: 40px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    padding-top: 20px;
 `;
 
 const Day = styled.div`
-font-size: 30px;
-font-weight: 600;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-
-`
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+`;
 
 const Container = styled.div`
     display: flex;
@@ -60,11 +58,11 @@ function CustomerHome() {
     const [todayMenuList, setTodayMenuList] = useState([]);
     useEffect(() => {
         // postToday();
-        setInterval(() => postToday(), 5000);
+        setInterval(() => postToday(), 3000);
     }, [today]);
     const postToday = () => {
         const data = {
-            date: 21,
+            date: today,
         };
         axios
             .post("/buyer/info/", data)
@@ -78,26 +76,24 @@ function CustomerHome() {
     };
     return (
         <>
-        
-        <Background>
-            <ManwonText>
-                <FaMoneyBill1Wave />
-                만원프로젝트
-                <FaMoneyBill1Wave />
-            </ManwonText>
-            <Day>5월 {today}일</Day>
-            {/* <Navbar /> */}
-            <Container>
-                
-                {todayMenuList["all"] &&
-                    todayMenuList["all"].map((menus, index) => (
-                        <MenuWrapper>
-                            <MenuList key={index} menus={menus} />
-                        </MenuWrapper>
-                    ))}
-            </Container>
-        </Background>
-    </>
+            <Background>
+                <ManwonText>
+                    <FaMoneyBill1Wave />
+                    만원프로젝트
+                    <FaMoneyBill1Wave />
+                </ManwonText>
+                <Day>5월 {today}일</Day>
+                {/* <Navbar /> */}
+                <Container>
+                    {todayMenuList["all"] &&
+                        todayMenuList["all"].map((menus, index) => (
+                            <MenuWrapper>
+                                <MenuList key={index} menus={menus} />
+                            </MenuWrapper>
+                        ))}
+                </Container>
+            </Background>
+        </>
     );
 }
 
